@@ -1,5 +1,11 @@
 # Weather Station — Uno + BME280 + LCD
 
+[![License](https://img.shields.io/github/license/zuvuyan/weather-station-uno-bme280-lcd?color=blue)](LICENSE)
+[![Platform: Arduino](https://img.shields.io/badge/platform-Arduino-00979D?logo=arduino&logoColor=white)](https://www.arduino.cc/)
+[![Board: Uno](https://img.shields.io/badge/board-Uno%20(ATmega328P)-00979D)](https://docs.arduino.cc/hardware/uno-rev3/)
+[![Sensor: BME280](https://img.shields.io/badge/sensor-BME280-e10098)](https://www.bosch-sensortec.com/products/environmental-sensors/humidity-sensors-bme280/)
+[![Bus: I²C](https://img.shields.io/badge/bus-I%C2%B2C-555)](#wiring)
+
 Temperature, humidity and sea-level–corrected pressure on a 16×2 character LCD, read from a
 Bosch BME280 by an Arduino Uno. Everything is on one I²C bus — four wires.
 
