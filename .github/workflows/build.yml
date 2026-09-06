@@ -1,0 +1,38 @@
+name: build
+
+on:
+  push:
+    paths:
+      - "WeatherLCD/**"
+      - "libraries/**"
+      - ".github/workflows/build.yml"
+  pull_request:
+    paths:
+      - "WeatherLCD/**"
+      - "libraries/**"
+      - ".github/workflows/build.yml"
+  workflow_dispatch:
+
+jobs:
+  compile:
+    name: Compile for Arduino Uno
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install arduino-cli
+        uses: arduino/setup-arduino-cli@v2
+
+      - name: Install the AVR core
+        run: |
+          arduino-cli core update-index
+          arduino-cli core install arduino:avr
+
+      - name: Compile WeatherLCD
+        run: >
+          arduino-cli compile
+          --fqbn arduino:avr:uno
+          --libraries ./libraries
+          --warnings all
+          ./WeatherLCD

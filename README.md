@@ -1,5 +1,6 @@
 # Weather Station — Uno + BME280 + LCD
 
+[![Build](https://github.com/zuvuyan/weather-station-uno-bme280-lcd/actions/workflows/build.yml/badge.svg)](https://github.com/zuvuyan/weather-station-uno-bme280-lcd/actions/workflows/build.yml)
 [![License](https://img.shields.io/github/license/zuvuyan/weather-station-uno-bme280-lcd?color=blue)](LICENSE)
 [![Platform: Arduino](https://img.shields.io/badge/platform-Arduino-00979D?logo=arduino&logoColor=white)](https://www.arduino.cc/)
 [![Board: Uno](https://img.shields.io/badge/board-Uno%20(ATmega328P)-00979D)](https://docs.arduino.cc/hardware/uno-rev3/)
@@ -137,6 +138,10 @@ arduino-cli upload --fqbn arduino:avr:uno -p <PORT> ./WeatherLCD
 `<PORT>` is like `COM4` (Windows) or `/dev/ttyACM0` (Linux) / `/dev/cu.usbmodemXXXX` (macOS).
 
 A clean build reports roughly **40 % of flash and 28 % of RAM** on the Uno.
+
+The same `arduino-cli compile` command runs in CI on every change to the sketch or the bundled
+libraries — see [`.github/workflows/build.yml`](.github/workflows/build.yml) and the **build**
+badge above.
 
 ## Configuration
 
