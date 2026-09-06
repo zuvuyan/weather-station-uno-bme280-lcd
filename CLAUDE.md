@@ -83,3 +83,11 @@ changes belong in the sketch):
 - `.gitattributes` normalises line endings to LF in the repo.
 - `README.md` is the user-facing build/wiring/troubleshooting guide and `docs/wiring.svg` the
   wiring diagram — keep both in sync when hardware assumptions or the pin table change.
+
+## Decisions
+
+- **No Wokwi simulator project.** Wokwi's I²C LCD emulates the *standard* PCF8574 mapping
+  (P0=RS, P2=E, P4–P7=data), the opposite of this project's GY backpack, and neither vendored
+  library is in the Library Manager for Wokwi to fetch. A working sim would require a separate
+  sketch using `LiquidCrystal_I2C` + `Adafruit_BME280` — i.e. not the code that ships here — so
+  it was deliberately skipped. Don't re-add one without that context.
