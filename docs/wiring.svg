@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 892 524" role="img"
+     aria-label="Wiring diagram: an Arduino Uno connected over a four-wire I2C and power bus to a BME280 sensor and a PCF8574 LCD backpack.">
+  <style>
+    svg{
+      --ink:#1a1f24; --ink-soft:#59626b; --panel:#f5f6f8; --panel-2:#ffffff;
+      --border:#d8dce0; --border-strong:#b6bdc4; --bg:#ffffff;
+      --w-pwr:#cf4638; --w-gnd:#3a424a; --w-sda:#b9820f; --w-scl:#2f9d5f;
+    }
+    @media (prefers-color-scheme: dark){
+      svg{
+        --ink:#e6eaed; --ink-soft:#98a2ab; --panel:#141a20; --panel-2:#1a222a;
+        --border:#253039; --border-strong:#38454f; --bg:#1a222a;
+        --w-pwr:#e0574a; --w-gnd:#869199; --w-sda:#d8a441; --w-scl:#47b97a;
+      }
+    }
+    .bg{ fill:var(--bg); }
+    .wire-halo{ stroke:var(--bg); stroke-width:7; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+    .wire{ stroke-width:3; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+    .w-pwr{ stroke:var(--w-pwr); } .w-gnd{ stroke:var(--w-gnd); }
+    .w-sda{ stroke:var(--w-sda); } .w-scl{ stroke:var(--w-scl); }
+    .d-pwr{ fill:var(--w-pwr); } .d-gnd{ fill:var(--w-gnd); }
+    .d-sda{ fill:var(--w-sda); } .d-scl{ fill:var(--w-scl); }
+    .blk{ fill:var(--panel-2); stroke:var(--border-strong); stroke-width:1.5; }
+    .blk-inner{ fill:var(--panel); stroke:var(--border); stroke-width:1; }
+    .pin{ fill:var(--panel); stroke:var(--border-strong); stroke-width:1; }
+    text{ font-family:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+    .d-title{ fill:var(--ink); font-weight:600; }
+    .d-sub{ fill:var(--ink-soft); font-family:"IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace; }
+    .d-pinlabel{ fill:var(--ink); font-family:"IBM Plex Mono", ui-monospace, Consolas, monospace; font-size:10px; }
+    .d-raillabel{ fill:var(--ink-soft); font-family:"IBM Plex Mono", ui-monospace, Consolas, monospace; font-size:11px; }
+    .d-inner-label{ fill:var(--ink-soft); font-family:"IBM Plex Mono", ui-monospace, Consolas, monospace; font-size:11px; }
+  </style>
+
+  <rect class="bg" x="0" y="0" width="892" height="524" fill="#ffffff"/>
+
+  <!-- rails -->
+  <g>
+    <line class="wire-halo" x1="60" y1="210" x2="820" y2="210"/>
+    <line class="wire-halo" x1="60" y1="238" x2="820" y2="238"/>
+    <line class="wire-halo" x1="60" y1="266" x2="820" y2="266"/>
+    <line class="wire-halo" x1="60" y1="294" x2="820" y2="294"/>
+    <line class="wire w-pwr" x1="60" y1="210" x2="820" y2="210"/>
+    <line class="wire w-gnd" x1="60" y1="238" x2="820" y2="238"/>
+    <line class="wire w-sda" x1="60" y1="266" x2="820" y2="266"/>
+    <line class="wire w-scl" x1="60" y1="294" x2="820" y2="294"/>
+  </g>
+
+  <!-- drop / riser halos -->
+  <g>
+    <path class="wire-halo" d="M150,174 L150,210"/>
+    <path class="wire-halo" d="M195,174 L195,238"/>
+    <path class="wire-halo" d="M240,174 L240,294"/>
+    <path class="wire-halo" d="M285,174 L285,266"/>
+    <path class="wire-halo" d="M615,190 L615,238"/>
+    <path class="wire-halo" d="M660,190 L660,210"/>
+    <path class="wire-halo" d="M705,190 L705,266"/>
+    <path class="wire-halo" d="M750,190 L750,294"/>
+    <path class="wire-halo" d="M370,350 L370,210"/>
+    <path class="wire-halo" d="M420,350 L420,238"/>
+    <path class="wire-halo" d="M466,350 L466,266"/>
+    <path class="wire-halo" d="M512,350 L512,294"/>
+  </g>
+
+  <!-- BME280 drops -->
+  <path class="wire w-pwr" d="M150,174 L150,210"/>
+  <path class="wire w-gnd" d="M195,174 L195,238"/>
+  <path class="wire w-scl" d="M240,174 L240,294"/>
+  <path class="wire w-sda" d="M285,174 L285,266"/>
+  <!-- LCD drops -->
+  <path class="wire w-gnd" d="M615,190 L615,238"/>
+  <path class="wire w-pwr" d="M660,190 L660,210"/>
+  <path class="wire w-sda" d="M705,190 L705,266"/>
+  <path class="wire w-scl" d="M750,190 L750,294"/>
+  <!-- Uno risers -->
+  <path class="wire w-pwr" d="M370,350 L370,210"/>
+  <path class="wire w-gnd" d="M420,350 L420,238"/>
+  <path class="wire w-sda" d="M466,350 L466,266"/>
+  <path class="wire w-scl" d="M512,350 L512,294"/>
+
+  <!-- junction dots -->
+  <g>
+    <circle class="d-pwr" cx="150" cy="210" r="3.4"/>
+    <circle class="d-gnd" cx="195" cy="238" r="3.4"/>
+    <circle class="d-scl" cx="240" cy="294" r="3.4"/>
+    <circle class="d-sda" cx="285" cy="266" r="3.4"/>
+    <circle class="d-gnd" cx="615" cy="238" r="3.4"/>
+    <circle class="d-pwr" cx="660" cy="210" r="3.4"/>
+    <circle class="d-sda" cx="705" cy="266" r="3.4"/>
+    <circle class="d-scl" cx="750" cy="294" r="3.4"/>
+    <circle class="d-pwr" cx="370" cy="210" r="3.4"/>
+    <circle class="d-gnd" cx="420" cy="238" r="3.4"/>
+    <circle class="d-sda" cx="466" cy="266" r="3.4"/>
+    <circle class="d-scl" cx="512" cy="294" r="3.4"/>
+  </g>
+
+  <!-- rail labels -->
+  <g>
+    <text class="d-raillabel" x="52" y="214" text-anchor="end">+5V</text>
+    <text class="d-raillabel" x="52" y="242" text-anchor="end">GND</text>
+    <text class="d-raillabel" x="52" y="270" text-anchor="end">SDA</text>
+    <text class="d-raillabel" x="52" y="298" text-anchor="end">SCL</text>
+    <text class="d-raillabel" x="828" y="214">+5V</text>
+    <text class="d-raillabel" x="828" y="242">GND</text>
+    <text class="d-raillabel" x="828" y="270">SDA &#183; A4</text>
+    <text class="d-raillabel" x="828" y="298">SCL &#183; A5</text>
+  </g>
+
+  <!-- BME280 block -->
+  <g>
+    <rect class="blk" x="110" y="70" width="210" height="104" rx="7"/>
+    <text class="d-title" x="124" y="102" font-size="18">BME280</text>
+    <text class="d-sub" x="124" y="122" font-size="11">I&#178;C &#183; 0x76</text>
+    <text class="d-sub" x="124" y="139" font-size="9">SDO&#8594;GND &#183; CSB&#8594;+5V</text>
+    <circle class="pin" cx="150" cy="174" r="3.2"/>
+    <circle class="pin" cx="195" cy="174" r="3.2"/>
+    <circle class="pin" cx="240" cy="174" r="3.2"/>
+    <circle class="pin" cx="285" cy="174" r="3.2"/>
+    <text class="d-pinlabel" x="150" y="166" text-anchor="middle">VCC</text>
+    <text class="d-pinlabel" x="195" y="166" text-anchor="middle">GND</text>
+    <text class="d-pinlabel" x="240" y="166" text-anchor="middle">SCL</text>
+    <text class="d-pinlabel" x="285" y="166" text-anchor="middle">SDA</text>
+  </g>
+
+  <!-- LCD block -->
+  <g>
+    <rect class="blk" x="560" y="70" width="252" height="120" rx="7"/>
+    <text class="d-title" x="574" y="94" font-size="14">PCF8574 &#8220;GY&#8221; backpack</text>
+    <text class="d-sub" x="574" y="112" font-size="11">I&#178;C &#183; 0x20</text>
+    <rect class="blk-inner" x="574" y="122" width="224" height="40" rx="4"/>
+    <text class="d-inner-label" x="686" y="146" text-anchor="middle">16 &#215; 2 HD44780 LCD</text>
+    <circle class="pin" cx="615" cy="190" r="3.2"/>
+    <circle class="pin" cx="660" cy="190" r="3.2"/>
+    <circle class="pin" cx="705" cy="190" r="3.2"/>
+    <circle class="pin" cx="750" cy="190" r="3.2"/>
+    <text class="d-pinlabel" x="615" y="182" text-anchor="middle">GND</text>
+    <text class="d-pinlabel" x="660" y="182" text-anchor="middle">VCC</text>
+    <text class="d-pinlabel" x="705" y="182" text-anchor="middle">SDA</text>
+    <text class="d-pinlabel" x="750" y="182" text-anchor="middle">SCL</text>
+  </g>
+
+  <!-- Uno block -->
+  <g>
+    <rect class="blk" x="330" y="350" width="252" height="120" rx="7"/>
+    <text class="d-title" x="344" y="392" font-size="17">Arduino Uno</text>
+    <text class="d-sub" x="344" y="412" font-size="10">ATmega328P &#183; 5 V logic</text>
+    <text class="d-sub" x="344" y="452" font-size="10">D0&#8211;D13, A0&#8211;A3 &#8212; unused</text>
+    <circle class="pin" cx="370" cy="350" r="3.2"/>
+    <circle class="pin" cx="420" cy="350" r="3.2"/>
+    <circle class="pin" cx="466" cy="350" r="3.2"/>
+    <circle class="pin" cx="512" cy="350" r="3.2"/>
+    <text class="d-pinlabel" x="370" y="366" text-anchor="middle">5V</text>
+    <text class="d-pinlabel" x="420" y="366" text-anchor="middle">GND</text>
+    <text class="d-pinlabel" x="466" y="366" text-anchor="middle">A4</text>
+    <text class="d-pinlabel" x="512" y="366" text-anchor="middle">A5</text>
+    <rect class="blk-inner" x="444" y="470" width="24" height="13" rx="2"/>
+    <path class="wire-halo" d="M456,483 L456,500"/>
+    <path class="wire w-gnd" d="M456,483 L456,500"/>
+    <text class="d-sub" x="456" y="514" font-size="10" text-anchor="middle">USB &#8212; 5 V supply + serial to PC</text>
+  </g>
+</svg>

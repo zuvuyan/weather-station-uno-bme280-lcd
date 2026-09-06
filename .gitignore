@@ -1,0 +1,16 @@
+# Build output
+/build/
+**/build/
+*.hex
+*.elf
+*.bin
+*.eep
+*.lst
+*.map
+
+# Editor / OS cruft
+.DS_Store
+Thumbs.db
+.vscode/
+*.tmp
+*~
